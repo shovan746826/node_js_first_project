@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const databaseName = "firstproject";
-// const mongodbURL = "mongodb://localhost:27017/";
+// const mongodbURL = process.env.BASE_URL;
+const mongodbURL = process.env.BASE_URL_PROD;
 
-mongoose.connect((process.env.BASE_URL)+databaseName, { //craete database
+mongoose.connect((mongodbURL), { //craete database
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
